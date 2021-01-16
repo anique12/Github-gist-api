@@ -1,3 +1,9 @@
+/**
+ * Return the object with file names and file urls arrays contained in the files array.
+ * @param { object } files Input received by the procedure.
+ * @return { object } object containing file information.
+ *
+ */
 function getFileType( files ) {
     var filesTag = [];
     var filesUrl = [];
@@ -12,12 +18,19 @@ function getFileType( files ) {
     return { filesTag, filesUrl };
 }
 
+/**
+ * Return the array with users that forked the gist.
+ * @param { string } forkUrl Url to fetch data.
+ * @return { array } array containing avatars.
+ *
+ */
 async function getForks( forkUrl ) {
     let forkAvatars = [];
     const res = await fetch( `${forkUrl} `)
     const data = await res.json();
-    if (data.length > 0) {
+    if ( data.length > 0 ) {
         var i = 0;
+        // push first 3 avatar urls.
         while( i < 3 && data[i] != null ) {
             forkAvatars.push( data[i].owner.avatar_url );
             i++;
@@ -26,6 +39,10 @@ async function getForks( forkUrl ) {
     return forkAvatars;
 }
 
+/**
+ * Trigger when user click on search button. It fetches the gists and display on table.
+ *
+ */
 async function search() {
     var temp = "";
     const name = document.getElementById( 'username' ).value;
@@ -39,7 +56,7 @@ async function search() {
         if ( data.length > 0 ) {
             data.forEach( ( itemData, index ) => {
             const fileInfo = getFileType( itemData.files );
-            const forksUrls = getForks( itemData.forks_url ).then( urls => {
+            getForks( itemData.forks_url ).then( urls => {
                 var imgs = "";
                 var noData = "No Forks";
                 var selectors = `tableData${ index+1 }`;
