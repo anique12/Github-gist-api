@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="app.js"></script>
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Zameen test</title>
+</head>
+<body class='container'>
+<div class="center">
+    <h1>Get all your gists here</h1>
+</div>
+<span class='fieldbtn'>
+    <input id=username class="form-control" placeholder="Enter your name here" ></input>
+    <button name='search' class="btn btn-primary" onclick="search()">Search <span class="fa fa-search"></span></button>
+</span>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Files Type</th>
+                <th>Forks</th>
+            </tr>
+        </thead>
+        <tbody id="data"></tbody>
+    </table>
+  </div>
+</body>
+</html>
