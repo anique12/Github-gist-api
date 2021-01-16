@@ -1,0 +1,49 @@
+.form-control {
+  width: 40% !important;
+  float: left;
+}
+.btn {
+  width: 10%;
+  float: left;
+  margin-left: 20px;
+}
+table {
+  box-shadow: 1px 1px 15px 7px #efefef;
+  margin-top: 30px;
+}
+.form-control::after,
+.btn::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.fieldbtn::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.fieldbtn {
+  margin-top: 30px;
+}
+.center {
+  margin-bottom: 30px;
+}
+img {
+  width: 40px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+.lName {
+  border: 1px solid;
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  display: inline-block;
+  width: 50px;
+  margin-right: 10px;
+}
+h4 {
+  text-align: center;
+}
